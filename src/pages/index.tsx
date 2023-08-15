@@ -2,8 +2,8 @@ import AppLayout from "@/components/app-layout";
 
 export default function Home() {
     return (
-        <AppLayout>
-            Hello
-        </AppLayout>
+        <p>Hello</p>
     )
 }
+
+Home.Layout = AppLayout;

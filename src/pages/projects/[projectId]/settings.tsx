@@ -3,10 +3,10 @@ import ProjectLayout from "@/components/project-layout";
 
 export default function Projects() {
     return (
-        <AppLayout>
-            <ProjectLayout>
-                Project - Settings
-            </ProjectLayout>
-        </AppLayout>
+        <ProjectLayout>
+            Project - Settings
+        </ProjectLayout>
     )
 }
+
+Projects.Layout = AppLayout;
