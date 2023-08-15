@@ -1,6 +1,12 @@
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function AppLayout({ children }: any) {
+
+    useEffect(() => {
+        console.log('AppLayout mounted')
+    }, [])
+
     return (
         <div className="bg-green-100 p-6">
             <p>App Layout</p>

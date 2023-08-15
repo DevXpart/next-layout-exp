@@ -9,9 +9,9 @@ export default function ProjectLinks() {
 
     return (
         <ProjectLayout>
-            Project - Links
+            <div className="p-6 bg-yellow-100 mt-6">
+                Project - Links
 
-            <div>
                 {project?.title}
             </div>
         </ProjectLayout>

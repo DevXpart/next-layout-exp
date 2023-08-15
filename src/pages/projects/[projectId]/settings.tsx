@@ -9,9 +9,9 @@ export default function Projects() {
 
     return (
         <ProjectLayout>
-            Project - Settings
+            <div className="p-6 bg-yellow-100 mt-6">
+                Project - Settings
 
-            <div>
                 {project?.title}
             </div>
         </ProjectLayout>

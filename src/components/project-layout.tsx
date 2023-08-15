@@ -2,12 +2,11 @@ import ProjectContext from "@/contexts/ProjectContext";
 import { getProject } from "@/services/project";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, memo } from "react";
 
-export default function ProjectLayout({ children }: any) {
+const ProjectLayout = ({ children }: any) => {
     const { query } = useRouter()
     const projectId = query.projectId
-
 
     const [project, setProject] = useState<any>(null)
 
@@ -18,8 +17,11 @@ export default function ProjectLayout({ children }: any) {
 
     useEffect(() => {
         getData()
-    }, [getData])
+    }, [])
 
+    useEffect(() => {
+        console.log('ProjectLayout mounted')
+    }, [])
 
     if (!projectId) return (<div>Project not found</div>)
 
@@ -47,3 +49,5 @@ export default function ProjectLayout({ children }: any) {
         </ProjectContext.Provider>
     )
 }
+
+export default memo(ProjectLayout)

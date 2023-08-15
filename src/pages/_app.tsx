@@ -1,6 +1,6 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import { Page } from '@/types/page'
+import { Page } from '../../types/page'
 import { Fragment } from 'react'
 
 type Props = AppProps & {
