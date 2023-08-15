@@ -18,7 +18,7 @@ export default function ProjectLayout({ children }: any) {
 
     useEffect(() => {
         getData()
-    }, [projectId])
+    }, [getData])
 
 
     if (!projectId) return (<div>Project not found</div>)

@@ -1,21 +1,21 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
+import { Page } from '@/types/page'
+import { Fragment } from 'react'
 
-export default function App({ Component, pageProps }: AppProps) {
+type Props = AppProps & {
+    Component: Page
+}
 
-    const getLayout = Component?.getLayout || ((page: any) => page)
+export default function App({ Component, pageProps }: Props) {
 
-    const Layout = Component.Layout || null
+    const getLayout = Component?.getLayout ?? ((page: any) => page)
 
-    if (Layout) {
-        return (
-            <Layout>
-                {getLayout(
-                    <Component {...pageProps} />
-                )}
-            </Layout>
-        )
-    }
+    const Layout = Component?.layout ?? Fragment
 
-    return getLayout(<Component {...pageProps} />)
+    return (
+        <Layout>
+            {getLayout(<Component {...pageProps} />)}
+        </Layout>
+    )
 }

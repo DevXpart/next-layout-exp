@@ -10,7 +10,11 @@ export default function ProjectLinks() {
     return (
         <ProjectLayout>
             Project - Links
+
+            <div>
+                {project?.title}
+            </div>
         </ProjectLayout>
     )
 }
-ProjectLinks.Layout = AppLayout
+ProjectLinks.layout = AppLayout

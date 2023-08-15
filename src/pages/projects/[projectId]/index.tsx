@@ -18,4 +18,4 @@ export default function ProjectOverview() {
     )
 }
 
-ProjectOverview.Layout = AppLayout
+ProjectOverview.layout = AppLayout
