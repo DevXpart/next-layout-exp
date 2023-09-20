@@ -13,14 +13,15 @@ const ProjectLayout = ({ children }: any) => {
     const getData = useCallback(async () => {
         let response = await getProject(projectId)
         setProject(response)
+        getData()
     }, [projectId])
 
     useEffect(() => {
-        getData()
-    }, [])
-
-    useEffect(() => {
         console.log('ProjectLayout mounted')
+
+        return () => {
+            console.log('ProjectLayout unmounted')
+        }
     }, [])
 
     if (!projectId) return (<div>Project not found</div>)
